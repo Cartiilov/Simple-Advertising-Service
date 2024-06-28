@@ -1,0 +1,37 @@
+/* Register.module.css */
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto auto auto;
+}
+  
+.registerRowsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+  
+.registerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+}
+  
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Adjust this value as needed */
+}
+  
+.input {
+    flex-grow: 1;
+    margin-left: 10px;
+}

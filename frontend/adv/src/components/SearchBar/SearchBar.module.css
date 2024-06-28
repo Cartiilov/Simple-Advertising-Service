@@ -1,0 +1,15 @@
+.searchBar {
+    text-align: center;
+    width: 100%;
+}
+
+.searchInput {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.searchButton {
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+}
