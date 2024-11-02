@@ -1,6 +1,6 @@
-import React from 'react'
-import App from './App.tsx'
-import './index.css'
+import React from "react";
+import App from "./App.tsx";
+import "./index.css";
 import { createRoot } from "react-dom/client";
 import { AuthProvider } from "./context/AuthContext";
 
@@ -12,4 +12,4 @@ root.render(
       <App />
     </AuthProvider>
   </React.StrictMode>,
-)
+);

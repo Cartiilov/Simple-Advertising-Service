@@ -13,10 +13,10 @@ export const useCreatePost = async (title: string, content: string) => {
     ? localStorage.getItem("token")
     : "";
 
-  var data = {
+  const data = {
     title: title,
     content: content,
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   };
 
   const res = await axios.post(BASE_URL + CREATE_POST_ENDPOINT, data, {
@@ -32,79 +32,83 @@ export const useCreatePost = async (title: string, content: string) => {
   }
 
   return res.data;
-}
+};
 
 export const useGetAllPosts = async () => {
-    const res = await axios.get(BASE_URL + GET_ALL_POSTS_ENDPOINT);
-    
-    if (res.status != 200) {
-        throw new Error("Not Authorized");
-    }
-    
-    return res.data;
-}
+  const res = await axios.get(BASE_URL + GET_ALL_POSTS_ENDPOINT);
+
+  if (res.status != 200) {
+    throw new Error("Not Authorized");
+  }
+
+  return res.data;
+};
 
 export const useGetPostById = async (id: string) => {
-    const res = await axios.get(BASE_URL + GET_POST_BY_ID_ENDPOINT + id);
-    
-    if (res.status != 200) {
-        throw new Error("Not Authorized");
-    }
-    
-    return res.data;
-}
+  const res = await axios.get(BASE_URL + GET_POST_BY_ID_ENDPOINT + id);
+
+  if (res.status != 200) {
+    throw new Error("Not Authorized");
+  }
+
+  return res.data;
+};
 
 export const useGetAllUserPosts = async (author: string) => {
-    const res = await axios.get(BASE_URL + GET_ALL_USER_POSTS_ENDPOINT + author);
-    
-    if (res.status != 200) {
-        throw new Error("Not Authorized");
-    }
-    
-    return res.data;
-}
+  const res = await axios.get(BASE_URL + GET_ALL_USER_POSTS_ENDPOINT + author);
 
-export const useUpdatePost = async (id: string, title: string, content: string) => {
-    const token = localStorage.hasOwnProperty("token")
+  if (res.status != 200) {
+    throw new Error("Not Authorized");
+  }
+
+  return res.data;
+};
+
+export const useUpdatePost = async (
+  id: string,
+  title: string,
+  content: string,
+) => {
+  const token = localStorage.hasOwnProperty("token")
     ? localStorage.getItem("token")
     : "";
 
-    var data = {
-        title: title,
-        content: content,
-        createdAt: new Date().toISOString()
-    };
+  const data = {
+    title: title,
+    content: content,
+    createdAt: new Date().toISOString(),
+  };
 
-    const res = await axios.put(BASE_URL + UPDATE_POST_ENDPOINT + id, data, {
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-        },
-    });
+  const res = await axios.put(BASE_URL + UPDATE_POST_ENDPOINT + id, data, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-    if (res.status != 200) {
-        throw new Error("Not Authorized");
-    }
+  if (res.status != 200) {
+    throw new Error("Not Authorized");
+  }
 
-    return res.data;
-}
+  return res.data;
+};
 
 export const useDeletePost = async (id: string) => {
-    const token = localStorage.hasOwnProperty("token")
+  const token = localStorage.hasOwnProperty("token")
     ? localStorage.getItem("token")
     : "";
 
-    const res = await axios.delete(BASE_URL + DELETE_POST_ENDPOINT + id, {
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-        },
-    });
+  const res = await axios.delete(BASE_URL + DELETE_POST_ENDPOINT + id, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-    if (res.status != 204) {
-        console.log(res);
-        throw new Error("Not Authorized");
-    }
+  if (res.status != 204) {
+    console.log(res);
+    throw new Error("Not Authorized");
+  }
 
-    return res.data;
-}
+  return res.data;
+};

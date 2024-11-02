@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styles from './SearchBar.module.css';
-import { Button } from '../Buttons/Button'
+import { useState } from "react";
+import styles from "./SearchBar.module.css";
+import { Button } from "../Buttons/Button";
 
 function SearchBar({ onSearch }) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -12,7 +12,6 @@ function SearchBar({ onSearch }) {
 
   return (
     <form className={styles.searchBar} onSubmit={handleSearch}>
-    
       <input
         type="text"
         className={styles.searchInput}
@@ -20,7 +19,14 @@ function SearchBar({ onSearch }) {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <Button buttonStyle='btn--outline2' type={undefined} onClick={undefined} buttonSize={undefined}>Search</Button>
+      <Button
+        buttonStyle="btn--outline2"
+        type={undefined}
+        onClick={undefined}
+        buttonSize={undefined}
+      >
+        Search
+      </Button>
     </form>
   );
 }

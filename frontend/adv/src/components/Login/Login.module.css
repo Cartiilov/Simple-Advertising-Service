@@ -1,41 +1,28 @@
-
-
 .loginContainer {
-    justify-content: center;
-    text-align: center;
-    margin: 10px auto auto auto;
+  justify-content: center;
+  text-align: center;
+  margin: 10px auto auto auto;
 }
 
 .loginContainer > p {
-    margin-top: 8px;
-    color: #0f0f0f;
-    font-size: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
+  margin-top: 8px;
+  color: #0f0f0f;
+  font-size: 32px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .loginRowsContainer {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
 }
 
 .loginRow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  min-width: 300px;
 }
-
-/* .loginRow > button {
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-}
-
-.loginRow > button:hover {
-    color: #ffffff;
-    background-color: black;
-} */
